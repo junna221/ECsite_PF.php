@@ -1,18 +1,3 @@
-<?php
-
-function h($s){
-  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
-}
-
-session_start();
-//ログイン済みの場合
-if (isset($_SESSION['mail'])) {
-  echo 'ようこそ' . h($_SESSION['mail']) . "さん<br>";
-  echo "<a href='logout.php'>ログアウトはこちら</a>";
-  exit;
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -42,3 +27,19 @@ if (isset($_SESSION['mail'])) {
     </div>
   </body>
 </html>
+
+<?php
+
+function h($s){
+  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
+}
+
+session_start();
+//ログイン済みの場合
+if (isset($_SESSION['mail'])) {
+  echo 'ようこそ' . h($_SESSION['mail']) . "さん<br>";
+  echo "<a href='logout.php'>ログアウトはこちら</a>";
+  exit;
+}
+
+?>

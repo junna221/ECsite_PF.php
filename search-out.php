@@ -8,7 +8,7 @@ try{
   $msg = $e->getMessage();
 }
 $sql = $pdo->prepare('select * from customer WHERE name=?');
-$sql->execute([$_REQUEST['keyword']]);
+$sql->execute([$_POST['keyword']]);
 foreach ($sql as $row) {
 
   echo '<p>',$row['name'],'</p>';
