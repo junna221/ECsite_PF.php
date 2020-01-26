@@ -101,3 +101,4 @@ if (isset($_SESSION['id'])) {//ログインしているとき
     $link = '<a href="signUp.php">新規登録</a>';
 }
 ?>
+

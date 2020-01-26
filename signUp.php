@@ -1,9 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h3>アカウントを作成</h3>
+    <form action="signUp.php" method="post">
+      <label>名前:</label>
+      <input type="text" name="name" required><br>
+      <label>住所:</label>
+      <input type="address" name="address" required><br>
+      <label>メールアドレス:</label>
+      <input type="mail" name="mail" required><br>
+      <label>パスワード:</label>
+      <input type="password" name="password" required><br>
+      <input type="submit" name="sigUp" value="新規登録">
+    </form>
+  </body>
+</html>
+
+
 <?php
 require_once('config.php');
 
-$name = $_POST['name'];
-$address = $_POST['address'];
-$mail = $_POST['mail'];
+
+if (isset($_POST["sigUp"])) {
+    // 1. ユーザIDの入力チェック
+    if (empty($_POST["mail"])) {  // emptyは値が空のとき
+        $errorMessage = 'IDが未入力です。';
+    }
 
 //データベースへ接続
 try{
@@ -24,11 +51,18 @@ if (preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i', $_POST['password']
   echo 'パスワードは半角英数字をそれぞれ1文字以上含んだ8文字以上で設定してください。';
   return false;
 }
+
+$name = $_POST['name'];
+$address = $_POST['address'];
+$mail = $_POST['mail'];
 //登録処理
 try {
   $stmt = $pdo->prepare("insert into customer(name, address, mail, password) value(?,?,?, ?)");
   $stmt->execute([$name,$address,$mail, $password]);
-  echo '登録完了';
+  echo 'アカウント作成が完了しました';
+  echo '<a href="account-in.php">ログイン</a>';
 } catch (\Exception $e) {
   echo '登録済みのメールアドレスです。';
 }
+}
+?>
