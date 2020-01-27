@@ -1,28 +1,19 @@
-
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>新規登録</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h3>ログイン</h3>
-    <form action="account-in.php" method="post">
-      <label>メールアドレス:</label>
-      <input type="mail" name="mail" required><br>
-      <label>パスワード:</label>
-      <input type="password" name="password" required><br>
-      <input type="submit" name="login" value="ログイン">
-    </form>
-    <a class="account-in" href="signUp.php">アカウント作成はこちら</a>
-  </body>
-</html>
+<?php include('../header.php');?>
+  <h3>ログイン</h3>
+  <form action="account-in.php" method="post">
+    <label>メールアドレス:</label>
+    <input type="mail" name="mail" required><br>
+    <label>パスワード:</label>
+    <input type="password" name="password" required><br>
+    <input type="submit" name="login" value="ログイン">
+  </form>
+  <a class="account-in" href="signUp.php">アカウント作成はこちら</a>
+<?php include('../footer.php');?>
 
 
 <?php
 
-require_once('config.php');
+include('config.php');
 
 session_start();
 

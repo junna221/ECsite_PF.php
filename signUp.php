@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>新規登録</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h3>アカウントを作成</h3>
-    <form action="signUp.php" method="post">
-      <label>名前:</label>
-      <input type="text" name="name" required><br>
-      <label>住所:</label>
-      <input type="address" name="address" required><br>
-      <label>メールアドレス:</label>
-      <input type="mail" name="mail" required><br>
-      <label>パスワード:</label>
-      <input type="password" name="password" required><br>
-      <input type="submit" name="sigUp" value="新規登録">
-    </form>
-  </body>
-</html>
+<?php include('../header.php');?>
+<h3>アカウントを作成</h3>
+<form action="signUp.php" method="post">
+  <label>名前:</label>
+  <input type="text" name="name" required><br>
+  <label>住所:</label>
+  <input type="address" name="address" required><br>
+  <label>メールアドレス:</label>
+  <input type="mail" name="mail" required><br>
+  <label>パスワード:</label>
+  <input type="password" name="password" required><br>
+  <input type="submit" name="sigUp" value="新規登録">
+</form>
+<?php include('../footer.php');?>
 
 
 <?php
-require_once('config.php');
-
+include('config.php');
 
 if (isset($_POST["sigUp"])) {
     // 1. ユーザIDの入力チェック

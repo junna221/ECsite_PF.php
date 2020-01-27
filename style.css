@@ -54,7 +54,7 @@ header {
 
 /*account-in.php*/
 .account-in {
-  color: black;
+  color:black;
   font-size:0.75em;
   width:200px;
   padding: 5px 20px 5px 20px;
@@ -64,3 +64,8 @@ header {
   border-radius: 2px;
 }
 
+
+/*search-out.php*/
+.search-inp {
+  display: flex;
+}
