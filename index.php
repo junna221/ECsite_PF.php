@@ -1,46 +1,35 @@
-<?php include('../header.php');?>
-<!-- header -->
-<header>
-  <div class="f-container">
-    <div class="search">
-      <form action="search-out.php" method="post">
-        <input type="text" name="keyword">
-        <input type="submit" value="検索">
-      </form>
-    </div>
-
-    <div class="account">
-      <a href="account-in.php">
-        <span>ログイン<br>新規登録</span><br>
-      </a>
-    </div>
-
-    <div class="cart">
-      <a href="cart-put.php">
-        <span>カート</span><br>
-      </a>
-    </div>
-  </div>
-</header>
-    
-<!-- content -->
-<content>
-      
-</content>
-<?php include('../footer.php');?>
-
 <?php
-
-function h($s){
-  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
-}
-
-session_start();
-//ログイン済みの場合
-if (isset($_SESSION['customer'])) {
-  echo 'ようこそ' . h($_SESSION['customer']['name']) . "さん<br>";
-  echo "<a href='logout-out.php'>ログアウトはこちら</a>";
-  exit;
-}
-
+include('config.php');
+//新商品が登録された順に表示するsql
+$sql = "select * from product WHERE id <= 200 ORDER BY id desc";
+$stmt = $pdo->query($sql);
 ?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ECサイト ポートフォリオ</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+<link href="js/slick-theme.css" rel="stylesheet" type="text/css">
+<link href="js/slick.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+<content>
+  <?php include('menu.php');?>
+  <p class="new">NEW!新商品</p>
+  <ul class="slider">
+    <?php foreach ($stmt as $row):?>
+      <li><img src="image/<?php echo $row['id']?>.jpg" height="200px"></li>
+    <?php endforeach; ?>
+  </ul>
+</content>
+
+
+</body>
+</html>

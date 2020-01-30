@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-  background-color: aliceblue;
+  background-color:rgb(220, 239, 239);
   width: 100%;
 }
 
@@ -22,50 +22,261 @@ header {
 }
 
 
-/*index.php*/
+                         /*menu.php*/
 .f-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .search [type="text"]{
-  width: 250px;
+  width: 250px;/*250px*/
   height: 30px;
   border-radius: 5px;
 }
 .search [type="submit"] {
-  width: 60px;
+  width: 60px;/*60px*/
   height: 35px;
   background-color: rgb(244, 192, 96);
   border-radius: 5px;
 }
 
 .account {
-  padding-left: 30px;
-  padding-right: 20px;
+  padding-left: 30px;/*30px*/
+  padding-right: 20px;/*20px*/
 }
 
 .cart {
-  padding-left: 10px;
-  padding-right: 20px;
+  padding-left: 10px;/*10px*/
+  padding-right: 20px;/*20px*/
 }
 
 
-/*account-in.php*/
+                         /*account-in.php*/
+.account_top{
+  text-align: center;
+}
+.account_top img {
+  margin-top: 10px;
+  height: 50px;
+}
+.account_log {
+  border: 1px solid #acabab;
+  border-radius: 3px;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 20px 0px;
+}
+.account_log form {
+  text-align: center;
+}
+.account_log h1 {
+  margin-left: 42px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.account_log [type="mail"],[type="password"] {
+  width: 70%;
+  height: 27px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  border: 1px solid #acabab;
+  margin-bottom: 10px;
+}
+.account_log [type="submit"] {
+  width: 75%;
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid #acabab;
+  margin-top: 20px;
+  font-weight: 700;
+  background-color: #ffd371;
+  box-shadow: 1px 1px 3px;
+}
+.account_log [type="submit"]:hover {
+  background-color: #d8b25d;
+  cursor: pointer;
+}
+
+.mail {
+  margin-right: 155px;
+  font-weight: 700;
+}
+.pass {
+  margin-right: 183px;
+  font-weight: 700;
+}
+.account_new {
+  border: 1px solid #acabab;
+  border-radius: 3px;
+  padding: 5px 0px 25px 0px;
+  margin: 0 auto;
+  width: 350px;
+}
+.account_new h2 {
+  text-align: center;
+  font-weight: 200;
+  font-size:0.9em;
+  line-height: 3.5;
+}
 .account-in {
+  display: block;
+  text-align: center;
+}
+.account-in a{
   color:black;
   font-size:0.75em;
-  width:200px;
-  padding: 5px 20px 5px 20px;
-  border:1px solid;
-  border-color:black;
-  background-color: #d1d1d1;
+  padding: 5px 65px 5px 65px;
+  border:1px solid #7c7c7c;
+  background-color: #d1d9de;
   border-radius: 2px;
+  box-shadow: 1px 1px 3px;
+}
+.account-in a:hover {
+  background-color: #a6b0b5;
 }
 
 
-/*search-out.php*/
-.search-inp {
-  display: flex;
+                         /*signUp.php*/
+.signup_top{
+  text-align: center;
 }
+.signup_top img {
+  margin-top: 10px;
+  height: 50px;
+}
+.signup {
+  border: 1px solid #acabab;
+  border-radius: 3px;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 20px 0px;
+}
+.signup form {
+  text-align: center;
+}
+.signup h1 {
+  margin-left: 42px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.signup [type="text"],[type="address"],[type="mail"],[type="password"] {
+  width: 70%;
+  height: 27px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  border: 1px solid #acabab;
+  margin-bottom: 10px;
+}
+.signup [type="submit"] {
+  width: 75%;
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid #acabab;
+  margin-top: 20px;
+  font-weight: 700;
+  background-color: #ffd371;
+  box-shadow: 1px 1px 3px;
+}
+.signup [type="submit"]:hover {
+  background-color: #d8b25d;
+  cursor: pointer;
+}
+.name_su {
+  margin-right: 225px;
+  font-weight: 700;
+}
+.address_su {
+  margin-right: 225px;
+  font-weight: 700;
+}
+.mail_su {
+  margin-right: 155px;
+  font-weight: 700;
+}
+.pass_su {
+  margin-right: 183px;
+  font-weight: 700;
+}
+.signup_new {
+  border: 1px solid #acabab;
+  border-radius: 3px;
+  padding: 5px 0px 25px 0px;
+  margin: 0 auto;
+  width: 350px;
+}
+.signup_new h2 {
+  text-align: center;
+  font-weight: 200;
+  font-size:0.9em;
+  line-height: 3.5;
+}
+.signup-in {
+  display: block;
+  text-align: center;
+}
+.signup-in a{
+  color:black;
+  font-size:0.75em;
+  padding: 5px 107px 5px 107px;
+  border:1px solid #7c7c7c;
+  background-color: #d1d9de;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px;
+}
+.signup-in a:hover {
+  background-color: #a6b0b5;
+}
+
+
+
+
+
+
+                         /*search-out.php*/
+.sea_ul{
+  width: 100%;
+}
+.sea_ul li {
+  float: left;
+  width: 22%;
+  margin: 2.5% 7% 2% 3%;
+  list-style: none;
+}
+.sea_ul a {
+  display: block;
+  border-bottom: 2px solid #ddd;
+  padding: 4px;
+  color: black;
+}
+.sea_ul img {
+  width: 100%;
+}
+
+
+/*slider*/
+.slider {
+  background-color: white;
+  margin: auto;
+  width: 95%;
+  top: 10px;
+}
+.slider img {
+  width: 70%;
+ margin: 28px auto;
+  margin-bottom: 0;
+}
+.new {
+  position: absolute;
+  z-index: 2;
+  margin-left: 3%;
+  margin-top: 1%;
+}
+
+
+

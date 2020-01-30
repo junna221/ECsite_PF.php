@@ -1,5 +1,5 @@
 
-<!--login.php-->
+<!-------------------login.php------------------->
 <?php
 
 require_once('config.php');
@@ -40,7 +40,7 @@ try{
 
 
 
-<!--signUp.php-->
+<!-------------------signUp.php------------------->
 <?php
 
 require_once('config.php');
@@ -89,7 +89,7 @@ try{
 
 
 
-<!--index.php-->
+<!-------------------index.php------------------->
 <?php
 session_start();
 $username = $_SESSION['mail'];
@@ -101,4 +101,28 @@ if (isset($_SESSION['id'])) {//ログインしているとき
     $link = '<a href="signUp.php">新規登録</a>';
 }
 ?>
+
+
+
+<!-------------------menu.php---------------------------->
+<?php
+function h($s){
+  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
+}
+
+session_start();
+//ログイン済みの場合
+if (isset($_SESSION['customer'])) {
+  echo 'ようこそ' . h($_SESSION['customer']['name']) . "さん<br>";
+  echo "<a href='logout-out.php'>ログアウトはこちら</a>";
+}
+?>
+
+<?php function h($s){
+  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
+}?>
+
+<?php session_start();?>
+<?php if(isset($_SESSION['customer]'):?>
+<p>ようこそ<?php echo h($_SESSION['customer']['name']);?></p>
 

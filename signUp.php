@@ -1,17 +1,26 @@
-<?php include('../header.php');?>
-<h3>アカウントを作成</h3>
-<form action="signUp.php" method="post">
-  <label>名前:</label>
-  <input type="text" name="name" required><br>
-  <label>住所:</label>
-  <input type="address" name="address" required><br>
-  <label>メールアドレス:</label>
-  <input type="mail" name="mail" required><br>
-  <label>パスワード:</label>
-  <input type="password" name="password" required><br>
-  <input type="submit" name="sigUp" value="新規登録">
-</form>
-<?php include('../footer.php');?>
+<?php include('head_foot/header.php');?>
+<p class="signup_top">
+    <img src="image/shop.png">
+  </p>
+  <div class="signup">
+    <h1>アカウントを作成</h1>
+    <form action="signUp.php" method="post">
+      <label class="name_su">名前</label><br>
+      <input type="text" name="name" required><br>
+      <label class="address_su">住所</label><br>
+      <input type="address" name="address" required><br>
+      <label class="mail_su">メールアドレス</label><br>
+      <input type="mail" name="mail" required><br>
+      <label class="pass_su">パスワード</label><br>
+      <input type="password" name="password" required><br>
+      <input type="submit" name="sigUp" value="新規登録">
+    </form>
+  </div>
+  <div class="signup_new">
+    <h2>すでにアカウントをお持ちの方</h2>
+    <p class="signup-in"><a href="account-in.php">ログイン</a></p>
+  </div>
+<?php include('head_foot/footer.php');?>
 
 
 <?php

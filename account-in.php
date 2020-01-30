@@ -1,14 +1,22 @@
-<?php include('../header.php');?>
-  <h3>ログイン</h3>
-  <form action="account-in.php" method="post">
-    <label>メールアドレス:</label>
-    <input type="mail" name="mail" required><br>
-    <label>パスワード:</label>
-    <input type="password" name="password" required><br>
-    <input type="submit" name="login" value="ログイン">
-  </form>
-  <a class="account-in" href="signUp.php">アカウント作成はこちら</a>
-<?php include('../footer.php');?>
+<?php include('head_foot/header.php');?>
+  <p class="account_top">
+    <img src="image/shop.png">
+  </p>
+  <div class="account_log">
+    <h1>ログイン</h1>
+    <form action="account-in.php" method="post">
+      <label class="mail">メールアドレス</label><br>
+      <input type="mail" name="mail" required><br>
+      <label class="pass">パスワード</label><br>
+      <input type="password" name="password" required><br>
+      <input type="submit" name="login" value="ログイン">
+    </form>
+  </div>
+  <div class="account_new">
+    <h2>はめてご利用の方</h2>
+    <p class="account-in"><a href="signUp.php">アカウント作成はこちら</a></p>
+  </div>
+<?php include('head_foot/footer.php');?>
 
 
 <?php
