@@ -25,7 +25,7 @@
     </div>
 
     <div class="cart">
-      <a href="cart-put.php">
+      <a href="cart-in.php">
         <span>カート</span><br>
       </a>
     </div>

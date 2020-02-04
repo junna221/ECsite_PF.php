@@ -20,7 +20,7 @@ $sql->execute(['%'.$_POST['keyword'].'%']);
   <section class="section01">
     <ul class="sea_ul">
       <li>
-        <a href="puroduct_deta.php">
+        <a href="puroduct_deta.php?id=<?php echo $row['id']?>">
           <img src="image/<?php echo $row['id']?>.jpg" >
           <p><?php echo $row['name']?></p>
           <p>¥<?php echo $row['price']?></p>
