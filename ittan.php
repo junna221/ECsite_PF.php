@@ -126,3 +126,18 @@ if (isset($_SESSION['customer'])) {
 <?php if(isset($_SESSION['customer]'):?>
 <p>ようこそ<?php echo h($_SESSION['customer']['name']);?></p>
 
+
+
+if (!isset($_SESSION['product'])){
+  $_SESSION['product'] =[];
+}
+//カートに入っている個数を取得
+$num = 0;
+if (isset($_SESSION['product'][$id])) {
+  $num = $_SESSION['product'][$id]['num'];
+}
+//カートに商品を登録
+$_SESSION['product'][$id] = [
+  'num' => $num+$_POST['num'],
+  'name' => $_POST['name']
+];
