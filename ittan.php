@@ -1,143 +1,80 @@
-
-<!-------------------login.php------------------->
 <?php
-
-require_once('config.php');
-
-session_start();
-
-
-$mail = $_POST['mail'];
-$password = $_POST['password'];
-
-try{
-  $pdo = new PDO(DSN,DB_USER,DB_PASS);
-} catch (PDOException $e) {
-  $msg = $e->getMessage();
-}
-  $sql = "SELECT * FROM customer WHERE mail = :mail AND password = :password";
-  $stmt = $pdo->prepare($sql);
-  $stmt->bindValue(':mail', $mail);
-  $stmt->bindValue(':password', $password);
-  $stmt->execute();
-  $member = $stmt->fetch();
-  if ($member) {
-    $_SESSION['id'] = $member['id'];
-    $_SESSION['name'] = $member['name'];
-    $msg = 'ログインしました';
-    $link = '<a href="index.php">ホーム</a>';
-  }else {
-    $msg = 'メールアドレスもしくはパスワードが間違っています。';
-    $link = '<a href="login.php">戻る</a>';
-  }
-?>
-
-<h1><?php echo $msg; ?></h1>
-<?php echo $link; ?>
-
-
-
-
-
-
-<!-------------------signUp.php------------------->
-<?php
-
-require_once('config.php');
-
-$name = $_POST['name'];
-$address = $_POST['address'];
-$mail = $_POST['mail'];
-$password = $_POST['password'];
-
-//データベースへ接続
-try{
-  $pdo = new PDO(DSN,DB_USER,DB_PASS);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-  $msg = $e->getMessage();
-}
-
- //フォームに入力されたmailがすでに登録されていないかチェック
-    $sql = "SELECT * FROM customer WHERE mail = :mail ";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':mail', $mail);
-    $stmt->execute();
-    $member = $stmt->fetch();
-    if ($member['mail'] == $mail) {
-        $msg = '同じメールアドレスが存在します。';
-        $link = '<a href="signup.php">戻る</a>';
-    } else {
-        //登録されていなければinsert 
-        $sql = "INSERT INTO customer(name, address, mail, password) VALUES (:name, :address, :mail, :password)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':name', $name);
-        $stmt->bindValue(':address', $address);
-        $stmt->bindValue(':mail', $mail);
-        $stmt->bindValue(':password', $password);
-        $stmt->execute();
-        $msg = '会員登録が完了しました';
-        $link = '<a href="login.php">ログインページ</a>';
+require'config.php';
+if (!empty($_SESSION['product'])) {
+   $sql=$pdo->prepare('insert into favorite values(?,?,?)');
+	$sql->execute([$_SESSION['customer']['id'], $_REQUEST['id'],$_POST['num']]);
+	echo '<table>';
+	echo '<th>商品番号</th><th>商品名</th>';
+	echo '<th>価格</th><th>個数</th><th>小計</th>';
+	$total=0;
+	foreach ($_SESSION['product'] as $id=>$product) {
+		echo '<tr>';
+		echo '<td>', $id, '</td>';
+		echo '<td><a href="detail.php?id=', $id, '">', 
+			$product['name'], '</a></td>';
+		echo '<td>', $product['price'], '</td>';
+		echo '<td>', $product['num'], '</td>';
+		$subtotal=$product['price']*$product['num'];
+		$total+=$subtotal;
+		echo '<td>', $subtotal, '</td>';
+		echo '<td><a href="cart-delete.php?id=', $id, '">削除</a></td>';
+		echo '</tr>';
     }
-
-?>
-
-<h1><?php echo $msg; ?></h1><!--メッセージの出力-->
-<?php echo $link; ?>
-
-
-
-
-
-<!-------------------index.php------------------->
-<?php
-session_start();
-$username = $_SESSION['mail'];
-if (isset($_SESSION['id'])) {//ログインしているとき
-    $msg = 'こんにちは' . $username . 'さん';
-    $link = '<a href="logout.php">ログアウト</a>';
-} else {//ログインしていない時
-    $msg = '<a href="login.php">ログインはこちら</a>';
-    $link = '<a href="signUp.php">新規登録</a>';
+	echo '<tr><td>合計</td><td></td><td></td><td></td><td>', $total, 
+		'</td><td></td></tr>';
+	echo '</table>';
+} else {
+	echo 'カートに商品がありません。';
 }
 ?>
 
 
 
-<!-------------------menu.php---------------------------->
-<?php
-function h($s){
-  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
-}
-
-session_start();
-//ログイン済みの場合
-if (isset($_SESSION['customer'])) {
-  echo 'ようこそ' . h($_SESSION['customer']['name']) . "さん<br>";
-  echo "<a href='logout-out.php'>ログアウトはこちら</a>";
-}
-?>
-
-<?php function h($s){
-  return htmlspecialchars($s, ENT_QUOTES, 'utf-8');
-}?>
-
-<?php session_start();?>
-<?php if(isset($_SESSION['customer]'):?>
-<p>ようこそ<?php echo h($_SESSION['customer']['name']);?></p>
-
-
-
-if (!isset($_SESSION['product'])){
-  $_SESSION['product'] =[];
-}
-//カートに入っている個数を取得
-$num = 0;
+require'config.php';
+$id = $_POST['id'];
+$count = 0;
 if (isset($_SESSION['product'][$id])) {
-  $num = $_SESSION['product'][$id]['num'];
+  $count=$_SESSION['product'][$id]['num'];
 }
-//カートに商品を登録
-$_SESSION['product'][$id] = [
-  'num' => $num+$_POST['num'],
-  'name' => $_POST['name']
-];
+
+if (isset($_SESSION['product'][$id]))
+$count=$_SESSION['product'][$id]['num'];
+if (!empty($_SESSION['product'])) {
+   $sql=$pdo->prepare('insert into favorite values(?,?,?)');
+	$sql->execute([$_SESSION['customer']['id'], $_REQUEST['id'],$_POST['num']]);
+	echo '<table>';
+	echo '<th>商品番号</th><th>商品名</th>';
+	echo '<th>価格</th><th>個数</th><th>小計</th>';
+	$total=0;
+	$sql=$pdo->prepare(
+		'select * from favorite, product '.
+		'where customer_id=? and product_id=id');
+	$sql->execute([$_SESSION['customer']['id']]);
+	foreach ($sql as $row) {
+     $id=$row['id'];
+		echo '<tr>';
+		echo '<td>', $id, '</td>';
+		echo '<td><a href="detail.php?id='.$id.'">', $row['name'], 
+			'</a></td>';
+        echo '<td>',$row['price'], '</td>';
+        echo '<td>',$count, '</td>';
+        echo '<td>',$count*$row['price'], '</td>';
+		echo '<td><a href="cart-delete.php?id=', $id, 
+			'">削除</a></td>';
+		echo '</tr>';
+	}
+}else {
+	echo 'カートに商品がありません。';
+}
+      
+      
+      $a = 'select customer_id,product_id, sum(count) from favorite group by customer_id,product_id';
+      $i = $pdo->query($a)->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_UNIQUE);
+      var_dump($i);
+      
+      
+      $a = ('update favorite set  count = :count  where customer_id = :customer_id');
+$a = $pdo->prepare($a);
+      $i = array(':count' =>$_POST['num'],':customer_id'=>$_SESSION['customer']['id']);
+      $a->execute($i);
+ echo '更新';

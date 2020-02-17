@@ -1,6 +1,5 @@
 <?php include('head_foot/header.php');?>
 
-
 <header>
   <div class="f-container">
     <!---------------ログインしている時に名前を表示する----------------->
@@ -25,7 +24,7 @@
     </div>
 
     <div class="cart">
-      <a href="cart-in.php">
+      <a href="cart-show.php">
         <span>カート</span><br>
       </a>
     </div>

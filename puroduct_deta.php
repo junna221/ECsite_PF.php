@@ -1,5 +1,4 @@
 <?php
-
 include('config.php');
 $sql = $pdo->prepare('select * from product where id=?');
 $sql->execute([$_REQUEST['id']]);
@@ -28,7 +27,7 @@ $sql->execute([$_REQUEST['id']]);
 <input type="hidden" name="id" value="<?php echo $row['id'];?>">
 <input type="hidden" name="name" value="<?php echo $row['name'];?>">
 <input type="hidden" name="price" value="<?php echo $row['price'];?>">
-<input type="submit" value="カートに追加">
+<input type="submit" name="submit" value="カートに追加">
 </form>
 <?php endforeach; ?>
 <?php include('head_foot/footer.php');?>
