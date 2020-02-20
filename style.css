@@ -28,8 +28,13 @@ header {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  height: 60px;
 }
-
+.log {
+  line-height: 0.7em;
+  margin-right: 30px;
+  
+}
 .search [type="text"]{
   width: 250px;/*250px*/
   height: 30px;
@@ -41,7 +46,6 @@ header {
   background-color: rgb(244, 192, 96);
   border-radius: 5px;
 }
-
 .account {
   padding-left: 30px;/*30px*/
   padding-right: 20px;/*20px*/

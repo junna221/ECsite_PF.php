@@ -25,7 +25,7 @@ $stmt = $pdo->query($sql);
   <p class="new">NEW!新商品</p>
   <ul class="slider">
     <?php foreach ($stmt as $row):?>
-      <li><img src="image/<?php echo $row['id']?>.jpg" height="200px"></li>
+      <li><a href="puroduct_deta.php?id=<?php echo $row['id']?>"><img src="image/<?php echo $row['id']?>.jpg" height="200px"></a></li>
     <?php endforeach; ?>
   </ul>
 </content>

@@ -7,8 +7,10 @@
     return htmlspecialchars($s, ENT_QUOTES, 'utf-8');}?>
       <?php session_start();?>
       <?php if(isset($_SESSION['customer'])):?>
-      <p>ようこそ<?php echo h($_SESSION['customer']['name'])?></p>
-      <a href='logout-out.php'>ログアウトはこちら</a>
+      <div class="log">
+        <p>ようこそ<?php echo h($_SESSION['customer']['name'])?></p><br>
+        <a href='logout-out.php'>ログアウトはこちら</a>
+      </div>
       <?php endif; ?>
     <div class="search">
       <form action="search-out.php" method="post">
@@ -19,13 +21,19 @@
 
     <div class="account">
       <a href="account-in.php">
-        <span>ログイン<br>新規登録</span><br>
+        <span>ログイン<br>新規登録</span>
       </a>
     </div>
 
     <div class="cart">
       <a href="cart-show.php">
-        <span>カート</span><br>
+        <span>カート</span>
+      </a>
+    </div>
+    
+      <div class="purchase">
+      <a href="purchase.php">
+        <span>購入履歴</span>
       </a>
     </div>
   </div>

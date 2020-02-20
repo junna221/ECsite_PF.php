@@ -1,6 +1,6 @@
 <?php include('head_foot/header.php');?>
   <p class="account_top">
-    <img src="image/shop.png">
+    <a href="index.php"><img src="image/shop.png"></a>
   </p>
   <div class="account_log">
     <h1>ログイン</h1>

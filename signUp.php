@@ -1,6 +1,6 @@
 <?php include('head_foot/header.php');?>
 <p class="signup_top">
-    <img src="image/shop.png">
+  <a href="index.php"><img src="image/shop.png"></a>
   </p>
   <div class="signup">
     <h1>アカウントを作成</h1>
