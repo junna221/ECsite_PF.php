@@ -5,7 +5,6 @@ $sql->execute([$_REQUEST['id']]);
 ?>
 
 <?php include('head_foot/header.php');?>
-
 <?php foreach ($sql as $row):?>
 <form action="cart-in.php" method="post">
   <section>
@@ -13,7 +12,7 @@ $sql->execute([$_REQUEST['id']]);
       <li>
           <img src="image/<?php echo $row['id']?>.jpg" >
           <p><?php echo $row['name']?></p>
-          <p>¥<?php echo $row['price']?></p>
+          <p>¥<?php echo number_format($row['price'])?></p>
       </li>
     </ul>
   </section>

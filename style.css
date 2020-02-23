@@ -238,10 +238,6 @@ header {
 }
 
 
-
-
-
-
                          /*search-out.php*/
 .sea_ul{
   width: 100%;
@@ -283,4 +279,21 @@ header {
 }
 
 
-
+                         /*cart.php*/
+.cart-t {
+  width: 70%;
+  border-bottom: 1px solid #afbbc3;
+}
+.cart-t a {
+  color: blue;
+}
+.cart-img {
+  width: 270px;
+}
+.cart-name {
+  width: 150px;
+}
+.cart-goukei {
+  width: 70%;
+text-align: right;
+}

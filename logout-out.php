@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["mail"])) {
-  echo 'ログアウトしました。';
+  header('location: http://localhost:8888/ECsite_PF.php/');
 } else {
   echo 'SessionがTimeoutしました。';
 }
