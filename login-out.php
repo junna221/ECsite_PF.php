@@ -13,6 +13,7 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 try {
   $pdo = new PDO(DSN, DB_USER, DB_PASS);
   $stmt = $pdo->prepare('select * from customer where mail = ?');
+  $stmt->bindvalue(1,$mail);
   $stmt->execute([$_POST['mail']]);
   //$row = $stmt->fetch(PDO::FETCH_ASSOC);
 } catch (\Exception $e) {

@@ -13,7 +13,7 @@
     </form>
   </div>
   <div class="account_new">
-    <h2>はめてご利用の方</h2>
+    <h2>はじめてご利用の方</h2>
     <p class="account-in"><a href="signUp.php">アカウント作成はこちら</a></p>
   </div>
 <?php include('head_foot/footer.php');?>
@@ -44,6 +44,7 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 try {
   $pdo = new PDO(DSN, DB_USER, DB_PASS);
   $stmt = $pdo->prepare('select * from customer where mail = ?');
+  $stmt->bindValue(1,$mail);
   $stmt->execute([$_POST['mail']]);
   //$row = $stmt->fetch(PDO::FETCH_ASSOC);
 } catch (\Exception $e) {

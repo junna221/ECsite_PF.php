@@ -1,22 +1,23 @@
-echo '<table>';
-	echo '<th>商品番号</th><th>商品名</th>';
-	echo '<th>価格</th><th>個数</th><th>小計</th>';
-	$sql=$pdo->prepare(
-		'select * from cart, product '.
-		'where customer_id=? and product_id=id');
-	$sql->execute([$_SESSION['customer']['id']]);
-	foreach ($sql as $row) {
-     $id=$row['id'];
-		echo '<tr>';
-		echo '<td>', $id, '</td>';
-		echo '<td><a href="detail.php?id='.$id.'">', $row['name'], 
-			'</a></td>';
-        echo '<td>',$row['price'], '</td>';
-        echo '<td>',$row['count'], '</td>';
-		echo '<td><a href="cart-delete.php?id=', $id, 
-			'">削除</a></td>';
-		echo '</tr>';
-    }
-}else {
-	echo 'カートに商品がありません。';
-}
+<table>
+		<?php $total=0;?>
+		<?php foreach ($sql_detail as $row_detail):?>
+			<tr>
+			<td><img src="image/<?php echo $row_detail['id'] ?>.jpg " height="70" width="100">
+				<?php echo $row_detail['name']?></td>
+			<td><?php echo $row_detail['price']?></td>
+			<td><?php echo $row_detail['count']?></td>
+			<?php $subtotal=$row_detail['price']*$row_detail['count'];?>
+			<?php $total+=$subtotal;?>
+			<td><?php echo $subtotal ?></td>
+			</tr>
+		<?php endforeach; ?>
+		<tr><td>合計</td><td></td><td></td><td></td><td>
+			<?php echo $total ?> </td></tr>
+		</table>
+		<hr>
+	<?php endforeach; ?>
+<?php else: ?>
+	購入履歴を表示するには、ログインしてください。
+<?php endif; ?>
+
+<?php include('head_foot/header.php');?>

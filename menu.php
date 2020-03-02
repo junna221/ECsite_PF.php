@@ -24,15 +24,21 @@
         <span>ログイン<br>新規登録</span>
       </a>
     </div>
-
+    
+    <div class="menu-buy">
+      <a href="buy.php">
+        <span>購入</span>
+      </a>
+    </div>
+    
     <div class="cart">
       <a href="cart-show.php">
         <span>カート</span>
       </a>
     </div>
     
-      <div class="purchase">
-      <a href="purchase.php">
+      <div class="history">
+      <a href="history.php">
         <span>購入履歴</span>
       </a>
     </div>

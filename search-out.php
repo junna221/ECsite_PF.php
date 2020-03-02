@@ -21,7 +21,7 @@ $sql->execute(['%'.$_POST['keyword'].'%']);
     <ul class="sea_ul">
       <li>
         <a href="puroduct_deta.php?id=<?php echo $row['id']?>">
-          <img src="image/<?php echo $row['id']?>.jpg" >
+          <img src="image/<?php echo $row['id']?>.jpg" height="150">
           <p><?php echo $row['name']?></p>
           <p>¥<?php echo number_format($row['price'])?></p>
         </a>

@@ -1,5 +1,5 @@
-<?php require 'menu.php'; ?>
-<?php
+<?php require 'menu.php';
+
 $id=$_POST['id'];
 if($_SESSION['customer']['id']) {
 if (!isset($_SESSION['product'])) {

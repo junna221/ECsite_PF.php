@@ -60,7 +60,6 @@ try {
   $stmt = $pdo->prepare("insert into customer(name, address, mail, password) value(?,?,?, ?)");
   $stmt->execute([$name,$address,$mail, $password]);
   echo 'アカウント作成が完了しました';
-  echo '<a href="account-in.php">ログイン</a>';
 } catch (\Exception $e) {
   echo '登録済みのメールアドレスです。';
 }

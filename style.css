@@ -268,7 +268,7 @@ header {
 }
 .slider img {
   width: 70%;
- margin: 28px auto;
+  margin: 28px auto;
   margin-bottom: 0;
 }
 .new {
@@ -281,7 +281,7 @@ header {
 
                          /*cart.php*/
 .cart-t {
-  width: 70%;
+  width: 650px;
   border-bottom: 1px solid #afbbc3;
 }
 .cart-t a {
@@ -294,6 +294,53 @@ header {
   width: 150px;
 }
 .cart-goukei {
-  width: 70%;
-text-align: right;
+  width: 650px;
+  text-align: right;
+  color: crimson;
+}
+
+
+                         /*buy.php*/
+.buy {
+  border: 1px solid #afbbc3;
+  width: 260px;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  margin-left: 21%;
+  margin-top: 20px;
+  line-height: 2;
+  border-radius: 3px;
+}
+.buy [type="submit"] {
+  background-color: rgb(244, 192, 96);
+  border: 1px solid #acabab;
+  width: 150px;
+  font-size: 15px;
+}
+.buy-schedule {
+  color: #369f7a;
+}
+.buy-goukei {
+  color: crimson;
+}
+
+
+                         /*history.php*/
+.history-d {
+  border-bottom: 1px solid #acabab;
+  width: 650px;
+  margin: 10px;
+}
+.history-name {
+  display: inline-block;
+}
+.history-name a {
+  color: blue;
+}
+.history-price {
+  padding-left: 110px;
+}
+.history-total {
+  padding-left:250px;
+  color: crimson;
 }
