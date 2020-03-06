@@ -10,9 +10,9 @@
       <label class="address_su">住所</label><br>
       <input type="address" name="address" required><br>
       <label class="mail_su">メールアドレス</label><br>
-      <input type="mail" name="mail" required><br>
+      <input type="mail" name="mail" placeholder="例：www@gmail.com" required><br>
       <label class="pass_su">パスワード</label><br>
-      <input type="password" name="password" required><br>
+      <input type="password" name="password" placeholder="半角英数字をそれぞれ1文字以上含んだ8文字以上" required><br>
       <input type="submit" name="sigUp" value="新規登録">
     </form>
   </div>

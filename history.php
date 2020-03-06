@@ -20,7 +20,7 @@ require'config.php';
     //お客様情報を元に購入履歴から商品データを取得する
     'select * from purchase_detail,product '.
     'where purchase_id=? and product_id=id');?>
-  <?php $sql->vindvalue(1.$purchase_id);?>
+  <?php $sql_detail->bindValue(1,$purchase_id);?>
   <?php $sql_detail->execute([$row_purchase['id']])?>
 <div class="history-d">
 		<?php $total=0;?>

@@ -1,4 +1,5 @@
 <?php
+display_errors = On
 include('config.php');
 //新商品が登録された順に表示するsql
 $sql = "select * from product WHERE id <= 200 ORDER BY id desc";

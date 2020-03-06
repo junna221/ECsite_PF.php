@@ -14,7 +14,7 @@
       <?php endif; ?>
     <div class="search">
       <form action="search-out.php" method="post">
-        <input type="text" name="keyword">
+        <input type="text" name="keyword" placeholder="キーワードを入力">
         <input type="submit" value="検索">
       </form>
     </div>
