@@ -1,6 +1,6 @@
 <?php
 
-define('DSN','mysql:host=localhost:8889;dbname=amshop;charset=utf8');
+define('DSN','mysql:host=https://shopping-site-php.herokuapp.com/;dbname=amshop;charset=utf8');
 define('DB_USER','staff');
 define('DB_PASS','pass12');
 
