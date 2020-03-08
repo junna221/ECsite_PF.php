@@ -1,6 +1,6 @@
 <?php
 
-define('DSN',"mysql:host=localhost;dbname=amshop;charset=utf8;unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock");
+define('DSN','mysql:host=localhost：/Applications/MAMP/tmp/mysql/mysql.sock;dbname=amshop;charset=utf8;');
 define('DB_USER','staff');
 define('DB_PASS','pass12');
 
