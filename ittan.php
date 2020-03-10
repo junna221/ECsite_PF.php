@@ -1,23 +1,22 @@
-<table>
-		<?php $total=0;?>
-		<?php foreach ($sql_detail as $row_detail):?>
-			<tr>
-			<td><img src="image/<?php echo $row_detail['id'] ?>.jpg " height="70" width="100">
-				<?php echo $row_detail['name']?></td>
-			<td><?php echo $row_detail['price']?></td>
-			<td><?php echo $row_detail['count']?></td>
-			<?php $subtotal=$row_detail['price']*$row_detail['count'];?>
-			<?php $total+=$subtotal;?>
-			<td><?php echo $subtotal ?></td>
-			</tr>
-		<?php endforeach; ?>
-		<tr><td>合計</td><td></td><td></td><td></td><td>
-			<?php echo $total ?> </td></tr>
-		</table>
-		<hr>
-	<?php endforeach; ?>
-<?php else: ?>
-	購入履歴を表示するには、ログインしてください。
-<?php endif; ?>
+function dbConnect(){
+  $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+  $db['amshop'] = ltrim($db['http://localhost:8888/phpMyAdmin/db_structure.php?server=1&db=amshop'], '/');
+  $dsn = "mysql:host={$db['localhost']};amshop={$db['amshop']};charset=utf8";
+  $user = $db['staff'];
+  $password = $db['pass12'];
+  $options = array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
+  );
+  $dbh = new PDO($dsn,$user,$password,$options);
+  return $dbh;
+}
 
-<?php include('head_foot/header.php');?>
+
+
+define('DSN','mysql:host=localhost;dbname=amshop;charset=utf8;');
+define('DB_USER','staff');
+define('DB_PASS','pass12');
+
+$pdo = new PDO(DSN,DB_USER,DB_PASS);
