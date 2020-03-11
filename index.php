@@ -2,7 +2,6 @@
 ini_set("display_errors", 'On');
 error_reporting(E_ALL);
 include('config.php');
-include('webhook.php');
 //新商品が登録された順に表示するsql
 $sql = "select * from product WHERE id <= 200 ORDER BY id desc";
 $stmt = $pdo->query($sql);
