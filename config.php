@@ -1,12 +1,19 @@
 <?php
 
-$url = parse_url(getenv("mysql://b911fee2114125:4016935a@us-cdbr-iron-east-04.cleardb.net/heroku_5d73596d6e4ca75?reconnect=true"));
+function dbConnect(){
+  $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+  $db['amshop'] = ltrim($db['http://localhost:8888/phpMyAdmin/db_structure.php?server=1&db=amshop'], '/');
+  $dsn = "mysql:host={$db['localhost']};amshop={$db['amshop']};charset=utf8";
+  $user = $db['staff'];
+  $password = $db['pass12'];
+  $options = array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
+  );
+  $pdo = new PDO($dsn,$user,$password,$options);
+  return $pdo;
+}
 
-$server = $url["localhost"];
-$username = $url["staff"];
-$password = $url["pass12"];
-$db = substr($url["http://localhost:8888/phpMyAdmin/db_structure.php?server=1&db=amshop"], 1);
-
-$conn = new mysqli($server, $username, $password, $db);
 
 ?>
