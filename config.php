@@ -1,11 +1,5 @@
 <?php
 
-define('DSN','mysql:host=localhost;dbname=amshop;charset=utf8;');
-define('DB_USER','staff');
-define('DB_PASS','pass12');
-
-$pdo = new PDO(DSN,DB_USER,DB_PASS);
-
 function dbConnect(){
   $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
   $db['dbname'] = ltrim($db['path'], '/');
