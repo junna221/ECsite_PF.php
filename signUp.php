@@ -34,7 +34,6 @@ if (isset($_POST["sigUp"])) {
 
 //データベースへ接続
 try{
-  
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
   $msg = $e->getMessage();

@@ -3,11 +3,7 @@
 include('config.php');
 include('menu.php');
 
-try{
-  $pdo = new PDO(DSN,DB_USER,DB_PASS);
-} catch (PDOException $e) {
-  $msg = $e->getMessage();
-}
+
 $sql = $pdo->prepare('select * from product WHERE name collate utf8_unicode_ci like ?');
 $sql->execute(['%'.$_POST['keyword'].'%']);
 
