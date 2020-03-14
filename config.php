@@ -1,5 +1,5 @@
 <?php
-
+var_dump(parse_url);
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
   $db['dbname'] = ltrim($db['path'], '/');
   $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
@@ -14,9 +14,5 @@ $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 $pdo = new PDO($dsn,$user,$password,$options);
   return $pdo;
 
-define('DSN','mysql:host=localhost;dbname=amshop;charset=utf8;');
-define('DB_USER','staff');
-define('DB_PASS','pass12');
 
-$pdo = new PDO(DSN,DB_USER,DB_PASS);
 ?>
