@@ -1,5 +1,4 @@
 <?php
-var_dump($_SERVER['CLEARDB_DATABASE_URL']);
 if(($_SERVER['CLEARDB_DATABASE_URL'])){
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
   $db['dbname'] = ltrim($db['path'], '/');
