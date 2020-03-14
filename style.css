@@ -377,10 +377,10 @@ header {
 }
 .log {
   display:inline-block;
-  line-height: 0.7em;
-  margin-left: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  line-height: 0.6em;
+  margin-left: 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .search {
   text-align: center;
@@ -397,17 +397,31 @@ header {
   background-color: rgb(244, 192, 96);
   border-radius: 5px;
 }
-
 .account {
-  padding-left: 0px;/*30px*/
-  padding-right: 0px;/*20px*/
-
+  padding-left: 5%;
+  padding-right: 18px;
+  float: left;
+  margin-top: 15px;
 }
+.account br {
+  display: none;
+  padding-left: 18px;
+  padding-right: 18px;
+  float: left;
+  }
+.menu-buy {
+  float: left;
+  margin-top: 15px;
+  }
 .cart {
-  padding-left: 0px;/*10px*/
-  padding-right: 0px;/*20px*/
+  padding-left: 18px;
+  padding-right: 18px;
+  float: left;
+  margin-top: 15px;
 }
-
+.history {
+  margin-top: 15px;
+}
 
 
 }

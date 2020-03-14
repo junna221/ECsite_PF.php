@@ -8,7 +8,7 @@
       <?php session_start();?>
       <?php if(isset($_SESSION['customer'])):?>
       <div class="log">
-        <p>ようこそ<?php echo h($_SESSION['customer']['name'])?></p><br>
+        <p>ようこそ、<?php echo h($_SESSION['customer']['name'])?>さま</p><br>
         <a href='logout-out.php'>ログアウトはこちら</a>
       </div>
       <?php endif; ?>
@@ -20,7 +20,7 @@
     </div>
         <div class="account">
           <a href="account-in.php">
-            <span>ログイン<br>新規登録</span>
+            <span>ログイン<br>　新規登録</span>
           </a>
         </div>
 
