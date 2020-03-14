@@ -1,5 +1,5 @@
 <?php
-var_dump(parse_url);
+var_dump(parse_url());
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
   $db['dbname'] = ltrim($db['path'], '/');
   $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
