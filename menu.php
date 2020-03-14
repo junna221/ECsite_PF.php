@@ -18,31 +18,30 @@
         <input type="submit" value="検索">
       </form>
     </div>
+        <div class="account">
+          <a href="account-in.php">
+            <span>ログイン<br>新規登録</span>
+          </a>
+        </div>
 
-    <div class="account">
-      <a href="account-in.php">
-        <span>ログイン<br>新規登録</span>
-      </a>
+        <div class="menu-buy">
+          <a href="buy.php">
+            <span>購入</span>
+          </a>
+        </div>
+
+        <div class="cart">
+          <a href="cart-show.php">
+            <span>カート</span>
+          </a>
+        </div>
+
+          <div class="history">
+          <a href="history.php">
+            <span>購入履歴</span>
+          </a>
+        </div>
     </div>
-    
-    <div class="menu-buy">
-      <a href="buy.php">
-        <span>購入</span>
-      </a>
-    </div>
-    
-    <div class="cart">
-      <a href="cart-show.php">
-        <span>カート</span>
-      </a>
-    </div>
-    
-      <div class="history">
-      <a href="history.php">
-        <span>購入履歴</span>
-      </a>
-    </div>
-  </div>
 </header>
 <?php include('head_foot/footer.php');?>
 

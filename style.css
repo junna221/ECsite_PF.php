@@ -56,7 +56,6 @@ header {
   padding-right: 20px;/*20px*/
 }
 
-
                          /*account-in.php*/
 .account_top{
   text-align: center;
@@ -259,7 +258,7 @@ header {
 }
 
 
-/*slider*/
+                         /*slider*/
 .slider {
   background-color: white;
   margin: auto;
@@ -343,4 +342,72 @@ header {
 .history-total {
   padding-left:250px;
   color: crimson;
+}
+
+                         /*レスポンシブ タブレット用*/
+@media screen and (max-width:960px) {
+  
+
+}
+
+                         /*レスポンシブ スマホ用*/
+@media screen and (max-width:560px) {
+
+header {
+  height: 130px;
+}
+                         /*slider*/
+.slick-prev:before, .slick-next:before {
+  display: none;
+  }
+.slider {
+  background-color: #ffffff;
+  width: 100%;
+  top: 0px;
+}
+.slider img {
+  width: 90%;
+  margin: 28px auto;
+  margin-bottom: 0;
+}
+                         /*menu.php*/
+.f-container {
+  display:block;
+  height: 130px;
+}
+.log {
+  display:inline-block;
+  line-height: 0.7em;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.search {
+  text-align: center;
+  }
+.search [type="text"]{
+  width: auto;
+  width: 75%;/*250px*/
+  height: 30px;
+  border-radius: 5px;
+}
+.search [type="submit"] {
+  width: 60px;/*60px*/
+  height: 35px;
+  background-color: rgb(244, 192, 96);
+  border-radius: 5px;
+}
+
+.account {
+  padding-left: 0px;/*30px*/
+  padding-right: 0px;/*20px*/
+
+}
+.cart {
+  padding-left: 0px;/*10px*/
+  padding-right: 0px;/*20px*/
+}
+
+
+
 }
