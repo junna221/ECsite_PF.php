@@ -34,6 +34,8 @@ if (!isset($row['mail'])) {
 if (password_verify($_POST['password'], $row['password'])) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
   $_SESSION['mail'] = $row['mail'];
+  header('Location: https://shopping-site-php.herokuapp.com/');
+  exit();
   header('Location: http://localhost:8888/ECsite_PF.php');
   exit();
 } else {
