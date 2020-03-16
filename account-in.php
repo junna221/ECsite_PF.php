@@ -67,6 +67,8 @@ if (password_verify($_POST['password'], $row['password'])) {
   $_SESSION['mail'] = $row['mail'];
  header('Location: https://shopping-site-php.herokuapp.com/');
   exit();
+  header('Location: http://localhost:8888/ECsite_PF.php');
+  exit();
 } else {
   echo 'メールアドレス又はパスワードが間違っています。';
   return false;
