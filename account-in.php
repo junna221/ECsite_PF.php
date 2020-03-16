@@ -43,7 +43,7 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 //DB内でPOSTされたメールアドレスを検索
 try {
   $stmt = $pdo->prepare('select * from customer where mail = ?');
-  $stmt->bindValue(1,$mail);
+  //$stmt->bindValue(1,$mail);
   $stmt->execute([$_POST['mail']]);
   //$row = $stmt->fetch(PDO::FETCH_ASSOC);
 } catch (\Exception $e) {
