@@ -20,7 +20,7 @@
     </div>
         <div class="account">
           <a href="account-in.php">
-            <span>ログイン<br>　新規登録</span>
+            <span>ログイン<br> 新規登録</span>
           </a>
         </div>
 

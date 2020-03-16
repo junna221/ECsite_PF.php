@@ -2,15 +2,12 @@
 session_start();
 
 if (isset($_SESSION["mail"])) {
+  echo 'ログアウトしました。';
   header('Location: https://shopping-site-php.herokuapp.com/');
   exit();
-  header('Location: http://localhost:8888/ECsite_PF.php');
-  exit();
+  //header('location: http://localhost:8888/ECsite_PF.php/');
 } else {
-  header('Location: https://shopping-site-php.herokuapp.com/');
-  exit();
-  header('Location: http://localhost:8888/ECsite_PF.php');
-  exit();
+  echo 'SessionがTimeoutしました。';
 }
 //セッション変数のクリア
 $_SESSION = array();
