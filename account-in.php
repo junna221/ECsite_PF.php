@@ -41,18 +41,16 @@ if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 }
 
 //DB内でPOSTされたメールアドレスを検索
-try {
+
   $stmt = $pdo->prepare('select * from customer where mail = ?');
   //$stmt->bindValue(1,$mail);
   $stmt->execute([$_POST['mail']]);
   //$row = $stmt->fetch(PDO::FETCH_ASSOC);
-} catch (\Exception $e) {
-  echo $e->getMessage() . PHP_EOL;
-}
+
 
 foreach ($stmt as $row) {
 	$_SESSION['customer']=[
-		'id'=>$row['id'], 'name'=>$row['name'], 
+		'id'=>$row['id'], 'name'=>$row['name'], 'mail'=>$row['mail'],
 		'address'=>$row['address']];
 }
 
