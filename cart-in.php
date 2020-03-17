@@ -16,7 +16,7 @@ $_SESSION['product'][$id]=[
 ];
 echo '<p>カートに商品を追加しました。</p>';
 echo '<hr>';
-include 'cart.php';
+require_once 'cart.php';
 } else {
   header('location: signUp.php');
   exit();
