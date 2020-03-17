@@ -8,7 +8,7 @@ include'config.php';
 <?php if (!empty($_SESSION['product'])) :?>
   <?php $sql=$pdo->prepare('insert into cart values(?,?,?)');?>
   <?php $sql->execute([$_SESSION['customer']['id'], $_REQUEST['id'],$_POST['num']]);?>
-
+<?php var_dump($_SESSION['product']);?>
   <?php $sql=$pdo->prepare(
     'select * from cart, product '.'where customer_id=? and product_id=id');
   //$sql->bindValue(1, $customer_id);
