@@ -3,7 +3,7 @@
 $id=$_POST['id'];
 if($_SESSION['customer']['id']) {
 if (!isset($_SESSION['product'])) {
-  //$_SESSION['product']=[];
+  $_SESSION['product']=[];
 }
 $count=0;
 if (isset($_SESSION['product'][$id])) {
