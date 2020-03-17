@@ -6,7 +6,7 @@ include'menu.php';
 
 <?php include('head_foot/header.php');?>
 <?php if(!empty($_SESSION['product'])):?>
-<?php include'cart.php';?>
+<?php require_once'cart.php';?>
 <div class="buy">
   <p class="buy-schedule">お届け予定日:<?php echo date("Y/m/d",strtotime("2 day"))?></p>
   <p>お届け先<br>お名前 ：  <?php echo ($_SESSION['customer']['name'])?></p>
