@@ -18,7 +18,7 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
   <?php $sql->execute([$_SESSION['customer']['id'], $_REQUEST['id'],$_POST['num']]);?>
   <?php $sql=$pdo->prepare(
     'select * from cart, product '.'where customer_id=? and product_id=id');
-  $sql->bindValue(1, $customer_id);
+  //$sql->bindValue(1, $customer_id);
   $sql->execute([$_SESSION['customer']['id']]);?>
 <?php $total=0;?>
   <?php foreach ($sql as $row) :?>
