@@ -1,7 +1,7 @@
 <?php
 require'config.php';
 require 'menu.php';
-session_start();
+//session_start();
 ?>
 
 <?php include('head_foot/header.php');?>
