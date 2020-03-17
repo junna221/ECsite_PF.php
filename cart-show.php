@@ -1,6 +1,6 @@
 <?php include('head_foot/header.php');?>
-<?php require 'menu.php'; ?>
+<?php include 'menu.php'; ?>
 <?php
-  require 'cart.php';
+  include 'cart.php';
 ?>
 <?php include('head_foot/footer.php');?>

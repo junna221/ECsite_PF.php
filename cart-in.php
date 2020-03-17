@@ -1,4 +1,4 @@
-<?php require 'menu.php';
+<?php include 'menu.php';
 
 $id=$_POST['id'];
 if($_SESSION['customer']['id']) {
@@ -16,7 +16,7 @@ $_SESSION['product'][$id]=[
 ];
 echo '<p>カートに商品を追加しました。</p>';
 echo '<hr>';
-require 'cart.php';
+include 'cart.php';
 } else {
   header('location: signUp.php');
   exit();

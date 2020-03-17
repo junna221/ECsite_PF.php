@@ -1,5 +1,5 @@
 <?php
-require'config.php';
+include'config.php';
 
 //商品数を更新
 $a = ('update cart set  count = :count where customer_id =:customer_id and product_id =:product_id');
