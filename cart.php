@@ -3,7 +3,8 @@ include'config.php';
 ?>
 
 <?php include('head_foot/header.php');?>
-<?php var_dump($_SESSION['product']);?>
+
+
 <?php if (!empty($_SESSION['product'])) :?>
   <?php $sql=$pdo->prepare('insert into cart values(?,?,?)');?>
   <?php $sql->execute([$_SESSION['customer']['id'], $_REQUEST['id'],$_POST['num']]);?>
