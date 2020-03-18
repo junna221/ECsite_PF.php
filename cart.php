@@ -16,16 +16,9 @@ var_dump($_POST['num']);
 
 <?php include('head_foot/header.php');?>
 
-<?php var_dump($_SESSION['customer']['id']);
-var_dump($_POST['id']);
-var_dump($_POST['num']);?>
-
 <?php if (!empty($_SESSION['product'])) :?>
  <?php $sql=$pdo->prepare('insert into cart values(?,?,?)');?>
   <?php $sql->execute([$_SESSION['customer']['id'],$_POST['id'],$_POST['num']]);?>
-<?php var_dump($_SESSION['customer']['id']);
-var_dump($_POST['id']);
-var_dump($_POST['num']);?>
   <?php $sql=$pdo->prepare(
     'select * from cart, product '.'where customer_id=? and product_id=id');
   //$sql->bindValue(1, $customer_id);
