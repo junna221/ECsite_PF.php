@@ -1,5 +1,7 @@
-<?php include 'menu.php';
-
+<?php
+include 'menu.php';
+include 'config.php';
+session_start();
 $id=$_POST['id'];
 //カート変数が未定義の時カートをからの状態に初期化
 if($_SESSION['customer']['id']) {
