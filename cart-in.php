@@ -17,6 +17,8 @@ $_SESSION['product'][$id]=[
   'price'=>$_POST['price'], 
   'num'=>$count+$_POST['num']
 ];
+$sql=$pdo->prepare('insert into cart values(?,?,?)');
+  $sql->execute([$_SESSION['customer']['id'],$_POST['id'],$_POST['num']]);
 echo '<p>カートに商品を追加しました。</p>';
 echo '<hr>';
 include 'cart.php';

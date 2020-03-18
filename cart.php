@@ -9,9 +9,6 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
   //$a->bindValue(':customer_id',$customer_id);
   //$a->bindValue('::product_id',$product_id);
   $a->execute($i);
-var_dump($_SESSION['customer']['id']);
-var_dump($_POST['id']);
-var_dump($_POST['num']);
 ?>
 
 <?php include('head_foot/header.php');?>
