@@ -10,8 +10,6 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
   //$a->bindValue('::product_id',$product_id);
   $a->execute($i);
 
-$sql=$pdo->prepare('insert into cart values(?,?,?)');
-$sql->execute([$_SESSION['customer']['id'],$_REQUEST['id'],$_POST['num']]);
 ?>
 
 <?php include('head_foot/header.php');?>
