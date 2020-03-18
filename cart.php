@@ -13,7 +13,6 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
 
 <?php include('head_foot/header.php');?>
 
-
 <?php if (!empty($_SESSION['product'])) :?>
   <?php $sql=$pdo->prepare('insert into cart values(?,?,?)');?>
   <?php $sql->execute([$_SESSION['customer']['id'],$_REQUEST['id'],$_POST['num']]);?>
