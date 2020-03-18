@@ -9,13 +9,15 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
   //$a->bindValue(':customer_id',$customer_id);
   //$a->bindValue('::product_id',$product_id);
   $a->execute($i);
+
+$sql=$pdo->prepare('insert into cart values(?,?,?)');
+$sql->execute([$_SESSION['customer']['id'],$_REQUEST['id'],$_POST['num']]);
 ?>
 
 <?php include('head_foot/header.php');?>
 
 <?php if (!empty($_SESSION['product'])) :?>
-  <?php $sql=$pdo->prepare('insert into cart values(?,?,?)');?>
-  <?php $sql->execute([$_SESSION['customer']['id'],$_REQUEST['id'],$_POST['num']]);?>
+ 
 
   <?php $sql=$pdo->prepare(
     'select * from cart, product '.'where customer_id=? and product_id=id');
