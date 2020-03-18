@@ -10,3 +10,9 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
   //$a->bindValue('::product_id',$product_id);
   $a->execute($i);
 ?>
+
+
+if($_SESSION['customer']['id']) {
+if (!isset($_SESSION['product'])) {
+  $_SESSION['product']=[];
+}
