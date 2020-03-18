@@ -27,10 +27,9 @@ $a = ('update cart set  count = :count where customer_id =:customer_id and produ
   //$a->bindValue(':customer_id',$customer_id);
   //$a->bindValue('::product_id',$product_id);
   $a->execute($i);
-  
+  echo '<p>カートに商品を追加しました。</p>';
 $sql=$pdo->prepare('insert into cart values(?,?,?)');
   $sql->execute([$_SESSION['customer']['id'],$_POST['id'],$_POST['num']]);
-echo '<p>カートに商品を追加しました。</p>';
 echo '<hr>';
 include 'cart.php';
 } else {
