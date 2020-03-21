@@ -7,7 +7,7 @@ $sql->execute([$_REQUEST['id']]);
 <?php include('head_foot/header.php');?>
 <?php foreach ($sql as $row):?>
 <form action="cart-in.php" method="post">
-  <section>
+  <section class="cart-puroduct">
     <ul>
       <li>
           <img src="image/<?php echo $row['id']?>.jpg" >

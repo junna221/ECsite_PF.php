@@ -24,7 +24,7 @@ include'config.php';
     <?php $subtotal = $row['count'] * $row['price'] ?>
     <?php $total+=$subtotal ?>
     <td class="cart-subtotal">小計:￥<?php echo number_format($subtotal) ?> </td>
-    <td><a href="cart-delete.php?id=<?php echo $id ?>">削除</a></td>
+    <td class="cart-delete"><a href="cart-delete.php?id=<?php echo $id ?>">削除</a></td>
   </tr>
 </table>
   <?php endforeach; ?>

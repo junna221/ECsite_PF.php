@@ -345,13 +345,7 @@ header {
 }
 
                          /*レスポンシブ タブレット用*/
-@media screen and (max-width:960px) {
-  
-
-}
-
-                         /*レスポンシブ スマホ用*/
-@media screen and (max-width:560px) {
+@media screen and (max-width:805px) {
 
 header {
   height: 130px;
@@ -423,5 +417,52 @@ header {
   margin-top: 15px;
 }
 
+                           /*puroduct_deta.php*/
+  .cart-puroduct img{
+    width: 80vw;
+  }
 
+}
+                         /*レスポンシブ スマホ用*/
+@media screen and (max-width:660px) {
+
+                             /*cart.php*/
+
+  .cart-t {
+    width: 410px;
+  table-layout: fixed;
+  }
+  .cart-t td {
+    overflow-wrap:anywhere;
+    float: left;
+  }
+  .cart-name {
+    width: 150px;
+  }
+  .cart-goukei {
+    width: 410px;
+  }
+  .cart-count {
+    padding-left: 10px;
+}
+  .cart-subtotal {
+    padding-left: 10px;
+  }
+  .cart-delete {
+    padding-left: 10px;
+  }
+  
+                           /*history.php*/
+.history-d {
+  width: 420px;
+}
+  
+                           /*search-out.php*/
+
+.sea_ul li {
+  width: 40%;
+}
+.sea_ul img {
+  width: 200px;
+}
 }
