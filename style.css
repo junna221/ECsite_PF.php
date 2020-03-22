@@ -429,7 +429,7 @@ header {
                              /*cart.php*/
 
   .cart-t {
-    width: 410px;
+    width: 378px;
   table-layout: fixed;
   }
   .cart-t td {
@@ -437,10 +437,10 @@ header {
     float: left;
   }
   .cart-name {
-    width: 150px;
+    width: 127px;
   }
   .cart-goukei {
-    width: 410px;
+    width: 365px;
   }
   .cart-count {
     padding-left: 10px;
@@ -454,15 +454,62 @@ header {
   
                            /*history.php*/
 .history-d {
-  width: 420px;
+  width: 390px;
 }
   
                            /*search-out.php*/
-
+.history-d {
+  border-bottom: 1px solid #acabab;
+  width: 350px;
+  margin: 10px;
+}
 .sea_ul li {
   width: 40%;
 }
 .sea_ul img {
-  width: 200px;
+  width: 160px;
+  height: 130px;
+}
+  .history-total {
+  padding-left:215px;
+}
+  
+                           /*buy.php*/
+.buy {
+  border: 1px solid #afbbc3;
+  width: 260px;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 2;
+  border-radius: 3px;
+}
+.buy [type="submit"] {
+  background-color: rgb(244, 192, 96);
+  border: 1px solid #acabab;
+  width: 150px;
+  font-size: 15px;
+}
+  
+                           /*slider*/
+.slider {
+  background-color: white;
+  margin: auto;
+  width: 98%;
+  top: 6px;
+}
+.slider img {
+  width: 115px;
+  height: 100px;
+  margin: 28px auto;
+  margin-bottom: 0;
+}
+.new {
+  position: absolute;
+  z-index: 2;
+  margin-left: 3%;
+  margin-top: 1%;
 }
 }
