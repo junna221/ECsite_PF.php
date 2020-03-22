@@ -3,8 +3,8 @@ session_start();
 
 if (isset($_SESSION["mail"])) {
   echo 'ログアウトしました。';
-  //header('Location: https://shopping-site-php.herokuapp.com/');
-  header('location: http://localhost:8888/ECsite_PF.php/');
+  header('Location: https://shopping-site-php.herokuapp.com/');
+  //header('location: http://localhost:8888/ECsite_PF.php/');
 } else {
   echo 'SessionがTimeoutしました。';
 }
