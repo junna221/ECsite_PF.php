@@ -258,7 +258,7 @@ header {
 }
 
 
-                         /*slider*/
+                         /*index.php*/
 .slider {
   background-color: white;
   margin: auto;
@@ -277,7 +277,30 @@ header {
   margin-top: 1%;
 }
 
-
+.pf-function {
+  width: 400px;
+  margin: auto;
+  margin-top: 70px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: white;
+  
+}
+.pf-function p {
+  margin-bottom: 10px;
+}
+.pf-function li {
+  list-style-position: inside;
+  text-align: left;
+  margin-left: 70px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #64bffc;
+  width: 270px;
+}
+.Responsive {
+  padding-left: 80px;
+}
                          /*cart.php*/
 .cart-t {
   width: 650px;
@@ -344,13 +367,18 @@ header {
   color: crimson;
 }
 
+
+
+
+
+
                          /*レスポンシブ タブレット用*/
 @media screen and (max-width:805px) {
 
 header {
   height: 130px;
 }
-                         /*slider*/
+                         /*index.php*/
 .slick-prev:before, .slick-next:before {
   display: none;
   }
@@ -364,6 +392,8 @@ header {
   margin: 28px auto;
   margin-bottom: 0;
 }
+  
+  
                          /*menu.php*/
 .f-container {
   display:block;
@@ -425,7 +455,6 @@ header {
 }
                          /*レスポンシブ スマホ用*/
 @media screen and (max-width:660px) {
-
                              /*cart.php*/
 
   .cart-t {
@@ -493,7 +522,7 @@ header {
   font-size: 15px;
 }
   
-                           /*slider*/
+                           /*index.php*/
 .slider {
   background-color: white;
   margin: auto;
@@ -512,4 +541,12 @@ header {
   margin-left: 3%;
   margin-top: 1%;
 }
+  
+.pf-function {
+  width: 365px;
+  margin-bottom: 30px;
+}
+  .pf-function li {
+    margin-left: 48px;
+  }
 }

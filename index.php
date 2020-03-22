@@ -24,14 +24,24 @@ $stmt = $pdo->query($sql);
 <body>
 <content>
   <?php include('menu.php');?>
-  <p class="new">NEW!新商品</p>
+  <p class="new">NEW! 新商品</p>
   <ul class="slider">
     <?php foreach ($stmt as $row):?>
       <li><a href="puroduct_deta.php?id=<?php echo $row['id']?>"><img src="image/<?php echo $row['id']?>.jpg" height="200px"></a></li>
     <?php endforeach; ?>
   </ul>
 </content>
-
-
+<div class="pf-function">
+  <p>【　当ポートフォリオの機能一覧（PHP)　】</p>
+  <ul>
+    <li>ユーザー登録</li>
+    <li>ログイン・ログアウト機能</li>
+    <li>商品検索・商品詳細表示　機能</li>
+    <li>カートへ商品追加・削除</li>
+    <li>商品購入　機能</li>
+    <li>購入履歴の確認　機能</li>
+    <li>レスポンシブ対応<p class="Responsive">スマホ・タブレット</p></li>
+  </ul>
+</div>
 </body>
 </html>
