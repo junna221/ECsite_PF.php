@@ -456,10 +456,6 @@ header {
                          /*レスポンシブ スマホ用*/
 @media screen and (max-width:660px) {
   
-  body {
-  background-color:rgb(220, 239, 239);
-  width: 80%;
-}
                              /*cart.php*/
 
   .cart-t {
@@ -531,7 +527,7 @@ header {
 .slider {
   background-color: white;
   margin: auto;
-  width: 98%;
+  width: 90%;
   top: 6px;
 }
 .slider img {
