@@ -455,6 +455,11 @@ header {
 }
                          /*レスポンシブ スマホ用*/
 @media screen and (max-width:660px) {
+  
+  body {
+  background-color:rgb(220, 239, 239);
+  width: 90%;
+}
                              /*cart.php*/
 
   .cart-t {
