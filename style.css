@@ -536,9 +536,6 @@ header {
   margin: 28px auto;
   margin-bottom: 0;
 }
- .slick-next {
-    display: none;
-  }
 .new {
   position: absolute;
   z-index: 2;
