@@ -527,7 +527,7 @@ header {
 .slider {
   background-color: white;
   margin: auto;
-  width: 90%;
+  width: 98%;
   top: 6px;
 }
 .slider img {
@@ -536,6 +536,9 @@ header {
   margin: 28px auto;
   margin-bottom: 0;
 }
+  .slick-prev, .slick-next {
+    display: none;
+  }
 .new {
   position: absolute;
   z-index: 2;
