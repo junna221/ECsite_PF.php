@@ -536,9 +536,6 @@ header {
   margin: 28px auto;
   margin-bottom: 0;
 }
-.slick-next {
-   right: 0px;
-}
 .new {
   position: absolute;
   z-index: 2;
