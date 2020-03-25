@@ -536,7 +536,7 @@ header {
   margin: 28px auto;
   margin-bottom: 0;
 }
-  .slick-prev, .slick-next {
+ .slick-next {
     display: none;
   }
 .new {
