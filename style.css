@@ -379,7 +379,7 @@ header {
   height: 130px;
 }
                          /*index.php*/
-.slick-prev, .slick-next {
+.slick-prev,.slick-next {
   display: none;
   }
 .slider {
